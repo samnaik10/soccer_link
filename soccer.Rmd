@@ -1,0 +1,46 @@
+---
+title: "Soccer Players"
+author: "Samruddhi Naik"
+date: '2022-06-30'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(rvest)
+library(janitor)
+```
+
+500+ link: https://en.wikipedia.org/wiki/List_of_footballers_with_500_or_more_goals
+
+```{r}
+soccer_players <- "https://en.wikipedia.org/wiki/List_of_footballers_with_500_or_more_goals" |>
+  read_html() |>
+  html_elements("table") |>
+  html_table()
+```
+
+```{r}
+soccer_players[[3]] |> 
+  clean_names()
+```
+
+
+50+ link: https://en.wikipedia.org/wiki/List_of_men%27s_footballers_with_50_or_more_international_goals
+
+```{r}
+fifty_list <- "https://en.wikipedia.org/wiki/List_of_men%27s_footballers_with_50_or_more_international_goals" |>
+  read_html() |>
+  html_elements("table") |>
+  html_table()
+```
+
+```{r}
+fifty_list[[5]] |> 
+  clean_names()
+```
+
+
+
+
