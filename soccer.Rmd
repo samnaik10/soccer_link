@@ -2,7 +2,7 @@
 title: "Soccer Players"
 author: "Samruddhi Naik"
 date: '2022-06-30'
-output: html_document
+output: rmarkdown::github_document
 ---
 
 ```{r setup, include=FALSE}
